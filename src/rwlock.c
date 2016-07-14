@@ -104,7 +104,7 @@ int RWLockWriteLock(RWLock *lock) {
 	AcquireSRWLockExclusive(&lock->_M_locker);
 	return 1;
 #elif RWLOCK_VENDOR == PTHREAD_RWLOCK_VENDOR
-	if (pthread_rwlock_rdlock(&lock->_M_locker) == 0)
+	if (pthread_rwlock_wrlock(&lock->_M_locker) == 0)
 		return 1;
 	return 0;
 #elif RWLOCK_VENDOR == WINDOWS_SIM_RWLOCK_VENDOR
