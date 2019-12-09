@@ -10,7 +10,7 @@ librwlock_la_SOURCES = ./src/rwlock.c
 librwlock_la_LDFLAGS = -no-undefined
 
 check_PROGRAMS = test1
-test1_SOURCES = ./src/main.c
+test1_SOURCES = ./src/test1.c
 test1_LDADD = librwlock.la
 
 TESTS = $(check_PROGRAMS)
